@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Project All Voice React Page
+
+The Actor component is located in src/component/actor folder.
+
+Actor page is devided left, and right sidebar, main timer, and main recorder.
+
+Page Styling is defined in styled folder.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
