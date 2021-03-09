@@ -9,8 +9,8 @@ export default function ActorRecordWrapper() {
     return (
         <RecordWrapper>
             {
-            Array.from({length: 3}).map(()=>(
-                <div style={{display: "flex", alignItems: "flex-end", margin: "10px 0 10px 0"}}>
+            Array.from({length: 3}).map((_, i)=>(
+                <div style={{display: "flex", alignItems: "center", margin: "10px 0 10px 0"}}>
                     <div>
                         <RecordFile><span>file_1611.wav</span></RecordFile>
                         <div style={{display: "flex", width: "170px", justifyContent: "flex-end"}}>
@@ -26,7 +26,9 @@ export default function ActorRecordWrapper() {
                             <Up width="9" height="14" color="#2d8eff"/>
                         </div>
                     </div>
-                    <RecordRight></RecordRight>
+                    <RecordRight playing={i}>
+                        {i === 0 && <img src="/sound.png" alt="sound_phase" style={{height: "100%"}}/>}
+                    </RecordRight>
                 </div>
             ))
             }

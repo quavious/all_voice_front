@@ -3,11 +3,13 @@ import {
     BsDownload as Download,
     BsUpload as Upload,
 } from 'react-icons/bs';
+import { Resizable } from '../../components/actor/sidebar/resizable';
 
 export const SideBarLeft = styled.div`
-    width: 170px;
+    max-width: 300px;
     min-width: 170px;
-    height: 1130px;
+    width: 170px;
+    min-height: 1130px;
     margin-right: 13px;
     margin-left: 110px;
     background-color: #f8f7f7;
@@ -52,9 +54,9 @@ export const SaveButton = styled(Download)`
     color: blue;
 `
 
-export const SelectFile = styled.div`
+export const SelectFile = styled(Resizable)`
     width: 100%;
-    height: ${props => props.file ? "37px" : "84px"};
+    min-height: ${props => props.file ? "37px" : "84px"};
     padding: 10px 10px 16px 14px;
     background-color: #ffffff;
     border: solid 1px rgba(0, 0, 0, 0.1);
@@ -86,13 +88,32 @@ export const UploadButton = styled(Upload)`
     color: blue;
 `
 
-export const SelectSource = styled.div`
+export const SelectSource = styled(Resizable)`
     width: 100%;
-    height: 37px;
+    min-height: 37px;
     padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
     border: solid 1px rgba(0, 0, 0, 0.1);
+`
+
+export const SelectType = styled.div`
+    display: flex;
+    width: 36px;
+    height: 22px; 
+    background-color: lightgreen;
+
+    & p {
+        margin: 2px auto 4px;
+        color: white;
+        font-size: 12px;
+    }
+`
+
+export const Delete = styled.span`
+    color: lightgray;
+    font-size: 9px;
+    white-space: nowrap;
 `

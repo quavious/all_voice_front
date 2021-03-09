@@ -8,16 +8,17 @@ export default function ActorSideRight() {
         <SideBarRight>
             <Member>
                 <Person color="blue"/>
-                <MemberName>올보이스/디렉터</MemberName>
                 <MemberStatus textColor="lightgreen">• 대기</MemberStatus>
+                <MemberName>올보이스/디렉터</MemberName>
             </Member>
             <Member>
                 <Person color="mint"/>
+                <MemberStatus textColor="deeppink">• 녹음중</MemberStatus>
                 <MemberName>올보이스 성우/성우1</MemberName>
-                <MemberStatus textColor="deeppink">• Recording</MemberStatus>
             </Member>
             <Member>
                 <Person color="gray"/>
+                <MemberStatus textColor="lightgray">상태없음</MemberStatus>
                 <MemberName>참관회원/참관</MemberName>
             </Member>
             <ChatBar>

@@ -87,7 +87,7 @@ export const RecordRight = styled.div`
     width: 590px;
     height: 64px;
     border: solid 1px rgba(184, 193, 203, 0.4);
-    background-color: #d3ffda;
+    background-color: ${props => props.playing === 0 ? "#ffffff" : "#d3ffda"};
 `
 
 export const ButtonStyle = {

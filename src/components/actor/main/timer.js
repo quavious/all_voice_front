@@ -1,10 +1,15 @@
-import {TimerBottom, TimerCheckBox, TimerExtra, TimerFileName, TimerLapse, TimerProgress, TimerSelect, TimerWrapper } from '../../../styled/main/timer';
+import {TimeNumber, TimerBottom, TimerCheckBox, TimerExtra, TimerFileName, TimerLapse, TimerProgress, TimerSelect, TimerWrapper } from '../../../styled/main/timer';
 
 export default function ActorMainTimer() {
     return (
         <TimerWrapper>
             <TimerFileName>
-                <TimerLapse><h4>21:10:033</h4></TimerLapse>
+                <TimerLapse>
+                    <TimeNumber>
+                        <h3 style={{margin: "0 auto", color: "deeppink"}}>2</h3>
+                    </TimeNumber>
+                    <h4>21:10:033</h4>
+                </TimerLapse>
                 <p>allvoice.xxx</p>
             </TimerFileName>
             <div style={{display: 'flex', alignItems: "center"}}>

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Resizable } from '../../components/actor/sidebar/resizable';
 
 export const SideBarRight = styled.div`
     width: 240px;
     min-width: 240px;
-    height: 960px;
+    min-height: 960px;
     margin: 0px 109px 0px 17px;
     background-color: #ffffff;
 `
@@ -27,17 +28,18 @@ export const MemberName = styled.span`
 
 export const MemberStatus = styled.span`
     height: 15px;
-    margin: 0 0 0 2px;
+    width: 42px;
+    margin: 0 0 0 4px;
     font-size: 9px;
     color: ${props => (props && props.textColor) || "black"};
     font-weight: 700;
 `
 
-export const ChatBar = styled.div`
+export const ChatBar = styled(Resizable)`
     border: solid 1px rgba(0, 0, 0, 0.1);
     padding-left: 12px;
     padding-right: 9px; 
-    height: 820px;
+    min-height: 820px;
 `;
 
 export const ChatMention = styled.p`
@@ -59,8 +61,8 @@ export const ChatStatus = styled.p`
     text-align: center;
 `;
 
-export const ChatInput = styled.div`
-    height: 84px;
+export const ChatInput = styled(Resizable)`
+    min-height: 84px;
     padding: 12px 0px 54px 10px;
     margin-bottom: 8px;
     border: solid 1px rgba(0, 0, 0, 0.1);

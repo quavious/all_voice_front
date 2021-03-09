@@ -32,10 +32,16 @@ export const SubTitleRight = styled(SubTitle)`
     &::-webkit-scrollbar {
         display: none;
     }
+    & p {
+        margin: 29px 26px 4px;
+        font-size: 12px;
+        line-height: 1.83;
+    }
 `
 
 export const TimerWrapper = styled.div`
   max-width: 761px;
+  width: 100%;
   height: 264px;
   margin: 4px 4px 0 9px;
   padding: 12px 16px 24px 12px;
@@ -53,11 +59,22 @@ export const TimerLapse = styled(Timer)`
     background-color: #44d7b6;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     & > h4 {
         color: white;
         text-align: center;
-        margin: 0 auto;
     }
+`
+
+export const TimeNumber = styled.div`
+    margin: 0 8px 0 6px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const TimerFileName = styled(Timer)`
@@ -98,7 +115,8 @@ export const TimerExtra = styled.div`
 export const TimerProgress = styled.progress`
     width: 100%;
     border: 0px;
-    height: 8px;
+    height: 16px;
+    margin-bottom: 8px;
     border-radius: 4px;
     &::-webkit-progress-value {
         background: #44d7b6;
