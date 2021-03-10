@@ -1,12 +1,17 @@
+import { Resizable } from 're-resizable';
 import styled from 'styled-components';
 
-export const RecordBox = styled.div`
-    width: 781px;
-    height: 447px;
-    margin: 42px auto;
+export const RecordBox = styled(Resizable)`
+    max-width: 781px;
+    height: 100%;
+    margin: 28px auto 42px auto;
     padding: 35px 10px 11px;
     border: solid 1px rgba(0, 0, 0, 0.1);
     background-color: #f8f7f7;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 export const RecordHeader = styled.div`
@@ -57,11 +62,12 @@ export const RecordWrapper = styled.div`
 export const RecordFile = styled.div`
     width: 170px;
     height: 24px;
-    padding: 0 2px 0 10px;
+    padding: 4px 2px 0px 10px;
     background-color: #778f9b;
-    & span {
+    & p {
         color: #ffffff;
         font-size: 11px;
+        margin: 0px;
     }
 `
 

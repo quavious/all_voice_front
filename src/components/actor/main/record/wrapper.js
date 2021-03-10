@@ -12,7 +12,7 @@ export default function ActorRecordWrapper() {
             Array.from({length: 3}).map((_, i)=>(
                 <div style={{display: "flex", alignItems: "center", margin: "10px 0 10px 0"}}>
                     <div>
-                        <RecordFile><span>file_1611.wav</span></RecordFile>
+                        <RecordFile><p>file_1611.wav</p></RecordFile>
                         <div style={{display: "flex", width: "170px", justifyContent: "flex-end"}}>
                         {
                         ["Mute", "Solo", "Delete", "Select"].map(e => (

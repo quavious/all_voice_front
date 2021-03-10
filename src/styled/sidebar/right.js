@@ -1,11 +1,11 @@
+import { Resizable } from 're-resizable';
 import styled from 'styled-components';
-import { Resizable } from '../../components/actor/sidebar/resizable';
 
-export const SideBarRight = styled.div`
-    width: 240px;
-    min-width: 240px;
+export const SideBarRight = styled(Resizable)`
+    min-width: 265px;
     min-height: 960px;
-    margin: 0px 109px 0px 17px;
+    margin: 0px 0px 0px 4px;
+    border-left: 13px solid gray;
     background-color: #ffffff;
 `
 
@@ -35,7 +35,7 @@ export const MemberStatus = styled.span`
     font-weight: 700;
 `
 
-export const ChatBar = styled(Resizable)`
+export const ChatBar = styled.div`
     border: solid 1px rgba(0, 0, 0, 0.1);
     padding-left: 12px;
     padding-right: 9px; 
@@ -61,7 +61,7 @@ export const ChatStatus = styled.p`
     text-align: center;
 `;
 
-export const ChatInput = styled(Resizable)`
+export const ChatInput = styled.div`
     min-height: 84px;
     padding: 12px 0px 54px 10px;
     margin-bottom: 8px;

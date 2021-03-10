@@ -1,12 +1,21 @@
-import { MainRow, MainSelect, SubTitleLeft, SubTitleRight } from '../../../styled/main/timer';
+import { MainRow, MainSelect, SubTitleLeft, SubTitleRight, TimerBox } from '../../../styled/main/timer';
 import { RecordBox, subTitleExample } from '../../../styled/main/record';
 import ActorMainTimer from './timer';
 import ActorRecordHeader from './record/header';
 import ActorRecordWrapper from './record/wrapper';
-export default function ActorMain() {
+import {Resizable} from 're-resizable';
+import { useState } from 'react';
+
+export default function ActorMain({widthLeft, setWidthLeft, widthMain, setWidthMain, widthRight, setWidthRight}) {
+    const [heightTimer, setHeightTimer] = useState(594)
+    const [heightRecord, setHeightRecord] = useState(470)
     return (
-            <div style={{maxWidth: 780, width:"100%", height: 595, backgroundColor: "#f8f7f7"}}>
-            <MainRow>
+        <Resizable style={{width: "100%"}} enable={null} maxWidth={widthMain} minWidth={0}>
+            <TimerBox style={{height: heightTimer}} enable={{bottom: true}} onResizeStop={(evt, dir, ref, d) => {
+                setHeightTimer(heightTimer + d.height);
+                setHeightRecord(heightRecord - d.height)
+            }}>
+                <MainRow>
                 {
                 ["기본", "동영상", "대본", "대본 크게"].map(el => (
                     <MainSelect>
@@ -17,16 +26,18 @@ export default function ActorMain() {
                 }
                 </MainRow>
                 <MainRow>
-                <SubTitleLeft></SubTitleLeft>
-                <SubTitleRight>
-                    <p>{subTitleExample}</p>
-                </SubTitleRight>
-            </MainRow>
-            <ActorMainTimer />
-            <RecordBox>
+                    <SubTitleLeft></SubTitleLeft>
+                    <SubTitleRight>
+                        <p>{subTitleExample}</p>
+                        <button>작성 완료</button>
+                    </SubTitleRight>
+                </MainRow>
+                <ActorMainTimer />
+            </TimerBox>
+            <RecordBox style={{height: heightRecord}} maxHeight={heightRecord}>
                 <ActorRecordHeader />
                 <ActorRecordWrapper />
             </RecordBox>
-        </div>
+        </Resizable>
     )
 }

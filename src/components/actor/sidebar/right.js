@@ -3,9 +3,12 @@ import {
     BsFillPersonFill as Person,
 } from 'react-icons/bs'
 
-export default function ActorSideRight() {
+export default function ActorSideRight({widthRight, setWidthRight, widthMain, setWidthMain}) {
     return (
-        <SideBarRight>
+        <SideBarRight enable={{left: true}} defaultSize={{width: widthRight}} onResizeStop={(evt, dir, ref, d) => {
+            setWidthRight(widthRight + d.width)
+            setWidthMain(widthMain - d.width)
+        }}>
             <Member>
                 <Person color="blue"/>
                 <MemberStatus textColor="lightgreen">• 대기</MemberStatus>

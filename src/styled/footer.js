@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
 export const Footer = styled.div`
-    width: 1240px;
-    height: 64px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    max-width: 1260px;
+    width: 100%;
+    height: 64px;
     padding: 10px 320px 10px 190px;
     background-image: linear-gradient(to left, #92e9d6, #a5d7ff, #2d8eff);
     display: flex;

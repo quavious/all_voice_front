@@ -11,7 +11,7 @@ export default function ActorHeader() {
             <NavBarTop />
             <Header>
                 <Logo>ALL VOICE</Logo>
-                <MicIcon width="32" color="#ff2c78"/>
+                <MicIcon width="32" color="#ff2c78" style={{marginTop: 6}}/>
                 <Working>AllVoice Recording...</Working>
                 <Copy><Address>https://allvoice.kr/recording02</Address><CopyLink width="21" height="12" color="#44d7b6"></CopyLink></Copy>
             </Header>

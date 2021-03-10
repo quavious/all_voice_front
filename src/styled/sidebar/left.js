@@ -1,18 +1,19 @@
 import styled from 'styled-components';
+import {Resizable} from 're-resizable'
 import {
     BsDownload as Download,
     BsUpload as Upload,
 } from 'react-icons/bs';
-import { Resizable } from '../../components/actor/sidebar/resizable';
 
-export const SideBarLeft = styled.div`
+export const SideBarLeft = styled(Resizable)`
     max-width: 300px;
     min-width: 170px;
     width: 170px;
     min-height: 1130px;
-    margin-right: 13px;
+    margin-right: 3px;
     margin-left: 110px;
     background-color: #f8f7f7;
+    border-right: 10px solid gray;
 `;
 
 export const ListHead = styled.div`
@@ -54,7 +55,7 @@ export const SaveButton = styled(Download)`
     color: blue;
 `
 
-export const SelectFile = styled(Resizable)`
+export const SelectFile = styled.div`
     width: 100%;
     min-height: ${props => props.file ? "37px" : "84px"};
     padding: 10px 10px 16px 14px;
@@ -63,21 +64,21 @@ export const SelectFile = styled(Resizable)`
 `
 
 export const SelectName = styled.div`
-    width: 145px;
-    height: 30px;
+    min-height: 30px;
     margin: 7px 0 0;
-    padding: 2px 5.4px 0px 6px;
+    padding: 2px 2px 0px 3px;
     background-color: #f8f7f7;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `
 
-export const FileNameText = styled.span`
+export const FileNameText = styled.p`
+    margin: 4px;
     width: 96px;
-    height: 17px;
     font-size: 11px;
     color: ${props => props.muted ? "lightgrey" : "#000a12"};
+    white-space: nowrap;
 `
 
 export const UploadButton = styled(Upload)`
@@ -88,32 +89,33 @@ export const UploadButton = styled(Upload)`
     color: blue;
 `
 
-export const SelectSource = styled(Resizable)`
+export const SelectSource = styled.div`
     width: 100%;
     min-height: 37px;
-    padding: 0 16px;
+    padding: 0 16px 0 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background-color: #ffffff;
     border: solid 1px rgba(0, 0, 0, 0.1);
 `
 
-export const SelectType = styled.div`
-    display: flex;
-    width: 36px;
+export const SelectType = styled.h5`
+    margin: 0px;
+    min-width: 32px;
+    max-width: 32px;
     height: 22px; 
     background-color: lightgreen;
-
-    & p {
-        margin: 2px auto 4px;
-        color: white;
-        font-size: 12px;
-    }
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 4px;
 `
 
 export const Delete = styled.span`
     color: lightgray;
     font-size: 9px;
     white-space: nowrap;
+    margin-left: auto;
 `

@@ -3,12 +3,14 @@ import {
     BsFolderFill as Folder,
     BsCheck as Check,
 } from 'react-icons/bs';
-import { Resizable } from './resizable';
 
-export default function ActorSideLeft() {
+export default function ActorSideLeft({widthLeft, setWidthLeft, widthMain, setWidthMain}) {
     return (
-        <SideBarLeft>
-            <Resizable style={{minHeight: 510}}>
+        <SideBarLeft enable={{right: true}} defaultSize={{width: widthLeft}} onResizeStop={(evt, dir, ref, d) => {
+            setWidthLeft(widthLeft + d.width)
+            setWidthMain(widthMain - d.width)
+        }}>
+            <div style={{height: "510px"}}>
                 <ListHead>
                     <ListTitle>
                         <Folder width="19" height="13" color="lightgray"/> 파일 목록
@@ -29,8 +31,8 @@ export default function ActorSideLeft() {
                     </SelectName>
                 </SelectFile>
                 ))}
-            </Resizable>
-            <Resizable style={{minHeight: 620}}>
+            </div>
+            <div style={{height: "560px"}}>
                 <ListHead>
                     <ListTitle>
                         <Folder width="19" height="13" color="lightgray"/> 소스
@@ -42,12 +44,12 @@ export default function ActorSideLeft() {
                 </ListSelect>
                 {["a.mp3", "b_cc_00000000.mp3"].map((el, idx) => (
                 <SelectSource>
-                    <SelectType><p>영상</p></SelectType>
-                    <SelectTitle style={{textDecoration: "underline", margin: "2px 6px 4px 6px", fontWeight: 400, wordBreak: "break-all", width: 81, fontSize: 12}}>{el}</SelectTitle>
+                    <SelectType>영상</SelectType>
+                    <SelectTitle style={{marginRight: "auto",textDecoration: "underline", margin: "2px 6px 4px 6px", fontWeight: 400, wordBreak: "break-all", fontSize: 12}}>{el}</SelectTitle>
                     <Delete>삭제</Delete>
                 </SelectSource>
                 ))}
-            </Resizable>
+            </div>
         </SideBarLeft>
     )
 }

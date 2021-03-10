@@ -1,3 +1,4 @@
+import { Resizable } from 're-resizable';
 import styled from 'styled-components';
 
 export const MainRow = styled.div`
@@ -25,6 +26,7 @@ export const SubTitleLeft = styled(SubTitle)`
 `
 
 export const SubTitleRight = styled(SubTitle)`
+    position: relative;
     width: 100%;
     max-width: 388px;
     background-color: #ffffff;
@@ -37,11 +39,32 @@ export const SubTitleRight = styled(SubTitle)`
         font-size: 12px;
         line-height: 1.83;
     }
+    & > button {
+        width: 72px;
+        height: 32px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ffffff;
+        border: 0px;
+        border-radius: 4px;
+        background-color: #44d7b6;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+    }
+`
+
+export const TimerBox = styled(Resizable)`
+    background-color: #f8f7f7;
+    border-bottom: 14px solid gray;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 export const TimerWrapper = styled.div`
   max-width: 761px;
-  width: 100%;
   height: 264px;
   margin: 4px 4px 0 9px;
   padding: 12px 16px 24px 12px;
@@ -102,14 +125,19 @@ export const TimerCheckBox = styled.div`
     background-color: #e6f1fc;
     display: flex;
     align-items: center;
+
+    & span {
+        font-size: 14px;
+        margin-left: 4px;
+    }
 `
 
-export const TimerExtra = styled.div`
-    width: 91px;
+export const TimerExtra = styled.input`
+    -webkit-appearance: none;
     height: 8px;
     margin: 0 10px;
     border-radius: 4px;
-    background-color: #e3e3e3;
+    background-color: #ffffff;
 `
 
 export const TimerProgress = styled.progress`
