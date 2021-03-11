@@ -4,13 +4,8 @@ import {
     FaStopCircle as Stop,
     FaFastBackward as Backward,
     FaFastForward as Forward,
-    FaHeadphones as Headphones,
-    FaSearchPlus as Plus,
-    FaSearchMinus as Minus,
-    FaItalic as Italic,
-    FaArrowsAltH as Arrow,
 } from 'react-icons/fa';
-import { ButtonStyle, HeaderItems, RecordButton, RecordHeader, ResetButton } from '../../../../styled/main/record';
+import { HeaderItems, RecordButton, RecordHeader, ResetButton } from '../../../../styled/main/record';
 
 export default function ActorRecordHeader() {
     return (
@@ -24,11 +19,11 @@ export default function ActorRecordHeader() {
                 <RecordButton>신규 트랙</RecordButton>
             </HeaderItems>
             <HeaderItems>
-                <Plus width="24" style={ButtonStyle["right"]}/>
-                <Minus width="24" style={ButtonStyle["right"]}/>
-                <Headphones width="24" style={ButtonStyle["right"]}/>
-                <Italic width="24" style={ButtonStyle["right"]}/>
-                <Arrow width="24" style={ButtonStyle["right"]}/>
+                <img src="/record/size-up.png" alt="size-up" />
+                <img src="/record/size-down.png" alt="size-down" />
+                <img src="/record/headphones.png" alt="headphones" />
+                <img src="/record/italic.png" alt="italic" />
+                <img src="/record/stretch.png" alt="stretch" />
                 <ResetButton>초기화</ResetButton>
             </HeaderItems>
         </RecordHeader>

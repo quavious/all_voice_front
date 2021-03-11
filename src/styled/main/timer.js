@@ -49,8 +49,8 @@ export const SubTitleRight = styled(SubTitle)`
         border-radius: 4px;
         background-color: #44d7b6;
         position: absolute;
-        bottom: 5px;
-        right: 5px;
+        bottom: 10px;
+        right: 15px;
     }
 `
 

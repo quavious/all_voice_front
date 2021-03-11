@@ -1,19 +1,11 @@
 import styled from 'styled-components';
 import {Resizable} from 're-resizable'
-import {
-    BsDownload as Download,
-    BsUpload as Upload,
-} from 'react-icons/bs';
 
 export const SideBarLeft = styled(Resizable)`
-    max-width: 300px;
-    min-width: 170px;
-    width: 170px;
     min-height: 1130px;
-    margin-right: 3px;
     margin-left: 110px;
     background-color: #f8f7f7;
-    border-right: 10px solid gray;
+    border-right: 13px solid gray;
 `;
 
 export const ListHead = styled.div`
@@ -28,6 +20,10 @@ export const ListTitle = styled.span`
     font-size: 16px;
     color: #1f2d3d;
     height: 19px;
+
+    & img {
+        margin-right: 9px;
+    }
 `
 
 export const ListSelect = styled.div`
@@ -38,22 +34,17 @@ export const ListSelect = styled.div`
     display: flex;
     justify-content: ${props => props.right ? "flex-end" : "start"};
     align-items: center;
+    & img {
+        margin-left: auto;
+    }
 `
 
 export const SelectTitle = styled.span`
     font-size: 11px;
-    color: ${props => props.file? "blue" : props.muted ? "lightgrey" : "#000a12"};
+    color: ${props => props.file? "#2d8eff" : props.muted ? "lightgrey" : "#000a12"};
     ${props => props.file ? "font-weight: 800;" : null}
     margin-left: 4px;
 `;
-
-export const SaveButton = styled(Download)`
-    margin-left: auto;
-    margin-right: 8px;
-    width: 15px;
-    height: 12px;
-    color: blue;
-`
 
 export const SelectFile = styled.div`
     width: 100%;
@@ -66,7 +57,7 @@ export const SelectFile = styled.div`
 export const SelectName = styled.div`
     min-height: 30px;
     margin: 7px 0 0;
-    padding: 2px 2px 0px 3px;
+    padding: 2px 5.4px 0px 3px;
     background-color: #f8f7f7;
     display: flex;
     align-items: center;
@@ -79,14 +70,6 @@ export const FileNameText = styled.p`
     font-size: 11px;
     color: ${props => props.muted ? "lightgrey" : "#000a12"};
     white-space: nowrap;
-`
-
-export const UploadButton = styled(Upload)`
-    margin-left: 5px;
-    margin-right: 8px;
-    width: 15px;
-    height: 12px;
-    color: blue;
 `
 
 export const SelectSource = styled.div`

@@ -6,12 +6,16 @@ import ActorRecordWrapper from './record/wrapper';
 import {Resizable} from 're-resizable';
 import { useState } from 'react';
 
-export default function ActorMain({widthLeft, setWidthLeft, widthMain, setWidthMain, widthRight, setWidthRight}) {
+export default function ActorMain({widthMax, widthMain, setWidthMain, widthRight, setWidthRight}) {
     const [heightTimer, setHeightTimer] = useState(594)
     const [heightRecord, setHeightRecord] = useState(470)
+    
     return (
-        <Resizable style={{width: "100%"}} enable={null} maxWidth={widthMain} minWidth={0}>
-            <TimerBox style={{height: heightTimer}} enable={{bottom: true}} onResizeStop={(evt, dir, ref, d) => {
+        <Resizable enable={{right: true}} size={{width: widthMain}} maxWidth={widthMax} minWidth={400} onResizeStop={(evt, dir, ref, d)=>{
+            setWidthMain(widthMain + d.width)
+            setWidthRight(widthRight - d.width)
+        }}>
+            <TimerBox size={{height: heightTimer}} enable={{bottom: true}} onResizeStop={(evt, dir, ref, d) => {
                 setHeightTimer(heightTimer + d.height);
                 setHeightRecord(heightRecord - d.height)
             }}>
@@ -26,17 +30,17 @@ export default function ActorMain({widthLeft, setWidthLeft, widthMain, setWidthM
                 }
                 </MainRow>
                 <MainRow>
-                    <SubTitleLeft></SubTitleLeft>
-                    <SubTitleRight>
+                    <SubTitleLeft style={{height: heightTimer - 350}}></SubTitleLeft>
+                    <SubTitleRight style={{height: heightTimer - 350}}>
                         <p>{subTitleExample}</p>
                         <button>작성 완료</button>
                     </SubTitleRight>
                 </MainRow>
                 <ActorMainTimer />
             </TimerBox>
-            <RecordBox style={{height: heightRecord}} maxHeight={heightRecord}>
+            <RecordBox size={{height: heightRecord}} maxHeight={heightRecord}>
                 <ActorRecordHeader />
-                <ActorRecordWrapper />
+                <ActorRecordWrapper height={heightRecord}/>
             </RecordBox>
         </Resizable>
     )

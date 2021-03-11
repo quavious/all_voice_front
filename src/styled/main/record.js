@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const RecordBox = styled(Resizable)`
     max-width: 781px;
     height: 100%;
-    margin: 28px auto 42px auto;
+    margin: 28px 8px 42px 8px;
     padding: 35px 10px 11px;
     border: solid 1px rgba(0, 0, 0, 0.1);
     background-color: #f8f7f7;
@@ -23,6 +23,12 @@ export const RecordHeader = styled.div`
 export const HeaderItems = styled.div`
     display: flex;
     align-items: center;
+    & img {
+        background-color: white;
+        padding: 9px;
+        border: 1px solid #dedddd;
+        width: 14px;
+    }
 `
 
 export const RecordButton = styled.button`
@@ -52,9 +58,8 @@ export const ResetButton = styled.button`
 `
 
 export const RecordWrapper = styled.div`
-    height: 330px;
-    margin: 42px 0 0;
-    padding: 0 0 25px;
+    margin: 42px 0 20px 0;
+    padding: 0 0px 10px 0px;
     border: solid 1px rgba(184, 193, 203, 0.4);
     background-color: #ffffff;
 `
@@ -95,8 +100,3 @@ export const RecordRight = styled.div`
     border: solid 1px rgba(184, 193, 203, 0.4);
     background-color: ${props => props.playing === 0 ? "#ffffff" : "#d3ffda"};
 `
-
-export const ButtonStyle = {
-    "left": {},
-    "right": {backgroundColor: "white", padding: "4px 4px", border: "1px solid #dedddd"}
-}

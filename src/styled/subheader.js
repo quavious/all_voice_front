@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import {
-    BsPlusCircle
-} from 'react-icons/bs';
 
 export const SubHeader = styled.div`
     display: flex;
@@ -44,8 +41,12 @@ export const Generate = styled.button`
     background-color: #2d8eff;
     color: #ffffff;
     font-size: 16px;
-`;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-export const PlusButton = styled(BsPlusCircle)`
-    vertical-align: text-bottom;
-`
+    & img {
+        width: 19px;
+        margin-left: 8px;
+    }
+`;

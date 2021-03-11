@@ -2,10 +2,8 @@ import { Resizable } from 're-resizable';
 import styled from 'styled-components';
 
 export const SideBarRight = styled(Resizable)`
-    min-width: 265px;
     min-height: 960px;
-    margin: 0px 0px 0px 4px;
-    border-left: 13px solid gray;
+    border-left: 17px solid gray;
     background-color: #ffffff;
 `
 
@@ -17,6 +15,11 @@ export const Member = styled.div`
     padding: 7px 0px 7px 12px;
     display: flex;
     align-items: center;
+
+    & img {
+        width: 24px;
+        height: 24px;
+    }
 `;
 
 export const MemberName = styled.span`

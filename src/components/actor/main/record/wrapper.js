@@ -5,9 +5,9 @@ import {
 } from 'react-icons/fa'
 import { RecordFile, RecordRight, RecordType, RecordWrapper } from '../../../../styled/main/record'
 
-export default function ActorRecordWrapper() {
+export default function ActorRecordWrapper({height}) {
     return (
-        <RecordWrapper>
+        <RecordWrapper style={{minHeight: 320, height: height-130}}>
             {
             Array.from({length: 3}).map((_, i)=>(
                 <div style={{display: "flex", alignItems: "center", margin: "10px 0 10px 0"}}>
