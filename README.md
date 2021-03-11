@@ -6,6 +6,14 @@ Actor page is devided left, and right sidebar, main timer, and main recorder.
 
 Page Styling is defined in styled folder.
 
+## Routes
+
+- /
+- /director
+- /setting/mic
+- /setting/create
+- /setting/confirm
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
